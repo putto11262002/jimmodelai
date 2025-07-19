@@ -116,7 +116,7 @@ locations.
   and the minimum viable product (MVP) scope. It outlines the high-level "what
   we are building."
 - **Relationship:** Directly builds upon the Problem & Opportunity Definition.
-- **Guidelines:** `docs/pm/product_concept_requirements.md`
+- **Guidelines:** `docs/pm/product_concept.md`
 - **Living Artifacts Location:** `artifacts/product_concept_requirements/`
 
 #### High-Level Technical Design & Architectural Decisions

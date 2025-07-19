@@ -120,7 +120,7 @@ Requirements Artifact** that will be generated and managed by the AI Agent.
 
 ### Artifact Storage Location:
 
-`artifacts/product_concept_requirements/[PRODUCT_OR_FEATURE_NAME].md`
+`artifacts/product_concept/doc.md`
 
 ### Artifact Structure & Content Requirements:
 
