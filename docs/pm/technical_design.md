@@ -129,7 +129,7 @@ AI Agent.
 
 ### Artifact Storage Location:
 
-`artifacts/technical_design/[PRODUCT_OR_FEATURE_NAME].md`
+`artifacts/technical_design/doc.md`
 
 ### Artifact Structure & Content Requirements:
 
