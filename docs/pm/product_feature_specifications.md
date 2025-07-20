@@ -11,13 +11,13 @@ features are organized under a higher-level **Epic** to maintain strategic
 alignment. This forms the detailed "what, exactly" for implementation for both
 AI and human engineering agents.
 
-### Purpose of this Component (`product_feature_specifications.md`)
+### Purpose of this Component (`product_feature_specification.md`)
 
 This file provides the **template and guidelines** for the AI Product Manager
 (me) to break down high-level product concepts into actionable, detailed feature
-specifications, organized by their overarching Epic. It acts as the blueprint
-for creating the corresponding `Product Feature Specification Artifact(s)` in
-the `artifacts/` directory.
+specifications, organized by their overarching Epic, **all within a single
+artifact**. It acts as the blueprint for creating the compiled
+`Product Feature Specification Artifact` in the `artifacts/` directory.
 
 ### How this Component Fits in the Workflow
 
@@ -45,6 +45,11 @@ As the AI PM Agent, my instructions for managing this component are:
   contained features align with the overall vision, user flows, and MVP scope.
   Reference the `Problem & Opportunity Definition` for the core problem being
   solved by each Epic and feature.
+- **Single Artifact Output:** All generated Epics, Features, User Stories,
+  Functional Requirements, and Acceptance Criteria **MUST be consolidated into a
+  single markdown file** at `artifacts/product_feature_specification.md`.
+  Structure this file clearly with top-level headings for Epics, then Features,
+  then User Stories.
 - **Epic Definition:** Define Epics as large bodies of work that have a common
   strategic objective or theme, often spanning multiple features or iterations.
   Each Epic should contribute to a key business outcome.
@@ -64,7 +69,7 @@ As the AI PM Agent, my instructions for managing this component are:
 
 ### Validation Strategy for this Component
 
-Before marking this component's artifact(s) as complete, I must perform the
+Before marking this component's artifact as complete, I must perform the
 following validation checks:
 
 - **Upstream Alignment Check:**
@@ -80,7 +85,7 @@ following validation checks:
   - Confirm all required fields (Epic, Feature, User Story, Functional
     Requirements, Acceptance Criteria) are populated for each definition.
   - Verify that no bracketed placeholders (`[ ]`) remain in the generated
-    artifact(s).
+    artifact.
 - **Precision & Testability Check:**
   - For each Acceptance Criterion, confirm it follows a clear "Given-When-Then"
     structure or an equivalent explicit testable pattern.
@@ -107,14 +112,12 @@ following validation checks:
 ## Artifact Definition: Product Feature Specification Artifact
 
 This section defines the content structure for the **Product Feature
-Specification Artifact(s)** that will be generated and managed by the AI PM
-Agent. Each major Epic, or sub-product, might be a separate artifact for better
-modularity.
+Specification Artifact** that will be generated and managed by the AI PM Agent.
+**All content will be consolidated into a single file.**
 
 ### Artifact Storage Location:
 
-`artifacts/product_features/[PRODUCT_OR_EPIC_NAME]/[FEATURE_NAME].md` (Multiple
-files under a feature-specific subdirectory may be used for better organization)
+`artifacts/product_feature_specification.md`
 
 ### Artifact Structure & Content Requirements:
 
@@ -122,89 +125,89 @@ files under a feature-specific subdirectory may be used for better organization)
   specific, relevant information.
 - All AI PM Agent Guideline comments within the template are for the AI PM's
   internal process and should NOT be included in the final generated artifact.
+- The artifact will start with a top-level `Product Feature Specification`
+  title.
+- Each Epic will be a Level 2 heading (`##`).
+- Each Feature will be a Level 3 heading (`###`).
+- Each User Story will be a Level 4 heading (`####`).
 
 ---
 
-### **Epic: [Epic Name]**
+# Product Feature Specification
 
-- **Purpose:** To group a collection of related features under a common
-  strategic objective or a significant body of work. Epics provide a
-  higher-level organizational unit for product planning and roadmapping.
-- **Content:**
+## Epic: [Epic Name]
 
-  - **Epic ID:** [A unique identifier for this Epic, e.g.,
-    `EPIC-CUSTOMER-ONBOARDING`]
-  - **Epic Goal:** [A brief statement of the high-level goal this Epic aims to
-    achieve, linking it to the Problem & Opportunity Definition (e.g., "Simplify
-    customer onboarding to reduce churn").]
+- **Epic ID:** [A unique identifier for this Epic, e.g.,
+  `EPIC-CUSTOMER-ONBOARDING`]
+- **Epic Goal:** [A brief statement of the high-level goal this Epic aims to
+  achieve, linking it to the Problem & Opportunity Definition (e.g., "Simplify
+  customer onboarding to reduce churn").]
 
-  ***
+### Feature [Number]: [Feature Name]
 
-  ### **Feature [Number]: [Feature Name]**
+- **Feature ID:** [A unique identifier for this Feature, e.g.,
+  `FEAT-ACCOUNT-CREATION`]
+- **Feature Goal:** [A brief statement of what this feature aims to achieve,
+  contributing to the Epic's goal.]
 
-  - **Purpose:** To define the detailed functionality, user interactions, and
-    success criteria for a specific product feature belonging to the above Epic.
-  - **Content:**
+#### User Story [Number]: As a [User Role from Problem Definition], I want to [Action related to feature], so that [Benefit / Desired Outcome].
 
-    - **Feature ID:** [A unique identifier for this Feature, e.g.,
-      `FEAT-ACCOUNT-CREATION`]
-    - **Feature Goal:** [A brief statement of what this feature aims to achieve,
-      contributing to the Epic's goal.]
+- **User Story ID:** [A unique identifier for this User Story, e.g.,
+  `US-ACCOUNT-001`]
+- **Functional Requirements:** [Detailed, explicit statements of what the system
+  MUST do for this user story. Use "The system SHALL..." for clarity.]
+  - FR [Number].[Number]: The system SHALL [explicit functional requirement,
+    e.g., "display a list of items relevant to the user"].
+  - FR [Number].[Number]: The system SHALL [another explicit functional
+    requirement].
+  - [List all necessary functional requirements for this user story.]
+- **Acceptance Criteria:** [Specific, testable conditions that must be met for
+  this user story to be considered complete. Use a Given-When-Then format where
+  applicable. Directly consumable for automated testing and task generation.]
+  - AC [Number].[Number].[Number].1: Given [pre-condition], when [action], then
+    [expected result].
+  - AC [Number].[Number].[Number].2: [Another specific, testable acceptance
+    criterion.]
+  - [Provide granular, unambiguous, testable acceptance criteria.]
+- **(Optional) Edge Cases / Error Handling:** [Briefly describe how the system
+  should behave in non-happy path scenarios for this user story.]
+  - [e.g., "If user input is invalid, System SHALL display a '...' error message
+    and prevent submission."]
+- **(Optional) UI/UX Considerations:** [Brief, high-level notes on user
+  interface or experience aspects relevant to this user story, complementing any
+  separate design assets.]
+  - [e.g., "This user story's primary interaction point should be a modal
+    dialog."]
 
-    - **User Story [Number]:** As a [User Role from Problem Definition], I want
-      to [Action related to feature], so that [Benefit / Desired Outcome].
+#### User Story [Number]: As a [User Role], I want to [Action], so that [Benefit].
 
-      - **User Story ID:** [A unique identifier for this User Story, e.g.,
-        `US-ACCOUNT-001`]
-      - **Functional Requirements:** [Detailed, explicit statements of what the
-        system MUST do for this user story. Use "The system SHALL..." for
-        clarity.]
-        - FR [Number].[Number]: The system SHALL [explicit functional
-          requirement, e.g., "display a list of items relevant to the user"].
-        - FR [Number].[Number]: The system SHALL [another explicit functional
-          requirement].
-        - [List all necessary functional requirements for this user story.]
-      - **Acceptance Criteria:** [Specific, testable conditions that must be met
-        for this user story to be considered complete. Use a Given-When-Then
-        format where applicable. Directly consumable for automated testing and
-        task generation.]
-        - AC [Number].[Number].[Number].1: Given [pre-condition], when [action],
-          then [expected result].
-        - AC [Number].[Number].[Number].2: [Another specific, testable
-          acceptance criterion.]
-        - [Provide granular, unambiguous, testable acceptance criteria.]
+- **User Story ID:** [A unique identifier for this User Story, e.g.,
+  `US-ACCOUNT-002`]
+- **Functional Requirements:**
+  - FR [Number].[Number]: The system SHALL [explicit functional requirement].
+- **Acceptance Criteria:**
+  - AC [Number].[Number].1: Given [pre-condition], when [action], then [expected
+    result].
+- **(Optional) Edge Cases / Error Handling:** [Briefly describe how the system
+  should behave in non-happy path scenarios for this user story.]
+- **(Optional) UI/UX Considerations:** [Brief, high-level notes on user
+  interface or experience aspects relevant to this user story.]
 
-    - **User Story [Number]:** (If a feature contains multiple distinct user
-      goals, list additional user stories here, each with its own requirements
-      and acceptance criteria.)
+### Feature [Number]: [Another Feature Name for this Epic]
 
-      - As a [User Role], I want to [Action], so that [Benefit].
-      - **User Story ID:** [A unique identifier for this User Story, e.g.,
-        `US-ACCOUNT-002`]
-      - **Functional Requirements:**
-        - FR [Number].[Number]: The system SHALL [explicit functional
-          requirement].
-      - **Acceptance Criteria:**
-        - AC [Number].[Number].1: Given [pre-condition], when [action], then
-          [expected result].
+- **Feature ID:** [...]
+- **Feature Goal:** [...]
+- [...User Stories, Functional Requirements, Acceptance Criteria as above...]
 
-    - **(Optional) Edge Cases / Error Handling:** [Briefly describe how the
-      system should behave in non-happy path scenarios for this feature/user
-      story.]
+---
 
-      - [e.g., "If user input is invalid, System SHALL display a '...' error
-        message and prevent submission."]
+## Epic: [Another Epic Name]
 
-    - **(Optional) UI/UX Considerations:** [Brief, high-level notes on user
-      interface or experience aspects relevant to this feature, complementing
-      any separate design assets.]
-      - [e.g., "Feature should be accessible via a prominent button on the
-        dashboard. Loading states should be clear."]
+- **Epic ID:** [...]
+- **Epic Goal:** [...]
 
-  ***
+### Feature [Number]: [Feature Name for this Epic]
 
-  ### **Feature [Number]: [Another Feature Name for this Epic]**
-
-  - **Feature ID:** [...]
-  - **Feature Goal:** [...]
-  - [...User Stories, Functional Requirements, Acceptance Criteria as above...]
+- **Feature ID:** [...]
+- **Feature Goal:** [...]
+- [...User Stories, Functional Requirements, Acceptance Criteria as above...]
